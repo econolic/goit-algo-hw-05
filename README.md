@@ -1,10 +1,12 @@
+# Домашнє завдання 5
+
 ## hashtable.py
 
 | Метод            | Опис                                               | Повертає |
 |------------------|----------------------------------------------------|----------|
-| `insert(key, v)` | Додає/оновлює пару `key-value`.                    | `True`   |
+| `insert(key, v)` | Додає/оновлює пару `key-value`                     | `True`   |
 | `get(key)`       | Повертає значення за ключем або `None`, якщо немає | `Any`    |
-| `delete(key)`    | **НОВОЕ.** Видаляє пару `key-value` з таблиці.     | `bool`   |
+| `delete(key)`    | Видаляє пару `key-value` з таблиці                 | `bool`   |
 
 ### Приклад використання `delete`
 
@@ -15,3 +17,20 @@ H = HashTable(5)
 H.insert("apple", 10)
 H.delete("apple")     # → True
 assert H.get("apple") is None
+```
+
+## binarysearch.py
+
+Реалізація бінарного пошуку верхньої межі у відсортованому масиві.
+
+| Функція                     | Опис                                                    | Повертає                    |
+|----------------------------|--------------------------------------------------------|----------------------------|
+| `binary_search_upper_bound`| Знаходить найменший елемент ≥ target у масиві          | `tuple[int, float | None]` |
+
+### Приклад використання `binary_search_upper_bound`
+
+```python
+arr = [1.0, 2.5, 3.0, 4.5, 5.0]
+iterations, upper_bound = binary_search_upper_bound(arr, 3.0)  # → (3, 3.0)
+iterations, upper_bound = binary_search_upper_bound(arr, 6.0)  # → (3, None)
+```
